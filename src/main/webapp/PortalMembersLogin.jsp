@@ -24,7 +24,7 @@ img{
     border: 2px white;
     color: whitesmoke;
     font-size: 25px;
-    background-color: #359896;
+    background-color: #581845;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border-radius: 10px;
     height: 60px;
@@ -33,15 +33,16 @@ img{
     margin: 110px 120px;
 }
 #button01:hover{
-	border: 1px solid #3e5357;
-	background-color: #3e5357;
+	border: 1px solid #dc7fc1;
+	background-color: #dc7fc1;
 	transform: scale(1.05);	
+	color: black;
 }
 #button02{
     border: 2px white;
     color: whitesmoke;
     font-size: 25px;
-    background-color: #359896;
+    background-color: #581845;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border-radius: 10px;
     height: 60px;
@@ -50,15 +51,16 @@ img{
     margin: 0px 60px;
 }
 #button02:hover{
-	border: 1px solid #3e5357;
-	background-color: #3e5357;
+	border: 1px solid #dc7fc1;
+	background-color: #dc7fc1;
 	transform: scale(1.05);	
+	color: black;
 }
 #button03{
 	border: 2px white;
     color: whitesmoke;
     font-size: 25px;
-    background-color: #359896;
+    background-color: #581845;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border-radius: 10px;
     height: 60px;
@@ -67,9 +69,10 @@ img{
     margin: 100px 120px;
 }
 #button03:hover{
-	border: 1px solid #3e5357;
-	background-color: #3e5357;
+	border: 1px solid #dc7fc1;
+	background-color: #dc7fc1;
 	transform: scale(1.05);	
+	color: black;
 }
 </style>
 </head>

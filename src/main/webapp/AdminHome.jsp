@@ -7,7 +7,8 @@
 <title>Admin Home Page</title>
 <style type="text/css">
 body{
-	background-color: white;
+	background-image: linear-gradient(#d0efff,#e6f2ff);
+	height: 595px;
 }
 #span{
 	display: flex;
@@ -125,7 +126,7 @@ h1{
 		<span id="span01">${pass}</span>
     	<span id="span02">${fail}</span>
 	</div>
-	<h1><b>Admin Dashboard</b></h1>
+	<h1><b><i>Admin Dashboard</i></b></h1>
  	<div id="but">
  		<div id="image01">
  	    	<img id="icon01" alt="" src="https://t4.ftcdn.net/jpg/04/00/59/49/360_F_400594956_UeLC38TNQPsi9SmQwc0mi5ZqFnqlzxjK.jpg" height="180px" width="160px"><br><br>

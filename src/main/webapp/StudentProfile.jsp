@@ -7,6 +7,9 @@
 <meta charset="ISO-8859-1">
 <title>Student Profile</title>
 <style type="text/css">
+body{
+	background-color: whitesmoke;
+}
 #span{
 	display: flex;
 	justify-content: center;
@@ -29,13 +32,16 @@ h1{
 	background-color: #133c55;
 	height: 50px;
 	padding: 2px;
+	border-radius: 8px;
 }
 .card {
 	border: 1px solid #ddd;
+	background-color: white;
 	padding: 15px;
 	margin: 10px auto;
 	width: 900px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
 }
 .card h3 {
 	color: #666;
@@ -64,7 +70,7 @@ h1{
 #art01{
 	color: black;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	margin: 0 150px;
+	margin: 0 130px;
 }
 #dark02{
 	color: black;
@@ -74,7 +80,7 @@ h1{
 #art02{
 	color: black;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	margin: 0 168px;
+	margin: 0 148px;
 }
 #dark03{
 	color: black;
@@ -84,7 +90,7 @@ h1{
 #art03{
 	color: black;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	margin: 0 106px;
+	margin: 0 86px;
 }
 #dark04{
 	color: black;
@@ -94,7 +100,7 @@ h1{
 #art04{
 	color: black;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	margin: 0 124px;
+	margin: 0 104px;
 }
 #dark05{
 	color: black;
@@ -104,7 +110,7 @@ h1{
 #art05{
 	color: black;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	margin: 0 175px;
+	margin: 0 155px;
 }
 #dark06{
 	color: black;
@@ -114,7 +120,7 @@ h1{
 #art06{
 	color: black;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	margin: 0 171px;
+	margin: 0 151px;
 }
 #dark07{
 	color: black;
@@ -124,12 +130,12 @@ h1{
 #art07{
 	color: black;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	margin: 0 180px;
+	margin: 0 160px;
 }
 #but{
 	display: flex;
 	gap: 10px;
-	margin: 0 800px;
+	margin: 0 660px;
 }
 #button02{
 	border: 1px black;
@@ -143,6 +149,21 @@ h1{
 	cursor: pointer;
 }
 #button02:hover {
+	background-color: rgb(103, 155, 233);
+	transform: scale(1.05);	
+}
+#button03{
+	border: 1px black;
+	border-radius: 8px;
+	font-size: 18px;
+	background-color: rgb(212, 212, 212);
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande','Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	color: black;
+	height: 40px;
+	width: 130px;
+	cursor: pointer;
+}
+#button03:hover {
 	background-color: rgb(103, 155, 233);
 	transform: scale(1.05);	
 }
@@ -166,6 +187,7 @@ h1{
     	</div>
     	<br><br>
     	<div id="but">
+    		<a href="/student/attendence"><button id="button03"><b>Attendence</b></button></a>
 			<a href="/student/profile"><button id="button02"><b>Edit</b></button></a>
 		</div>
 	</div>

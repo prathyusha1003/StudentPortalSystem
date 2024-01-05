@@ -8,7 +8,7 @@
 <title>Faculty Student Details</title>
 <style type="text/css">
 body{
-	background-color: #fbfaf0;
+	background-color: whitesmoke;
 }
 h1{
 	color: brown;
@@ -16,24 +16,90 @@ h1{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 40px;
 }
-#tab{
-    margin: 40px auto;
-    border-collapse: collapse;
-    width: 80%;
+#card00{
+	display: flex;
 }
-td, th {
-    padding: 12px;
-    border: 1.8px solid black;
-    text-align: center;
-    font-size: 20px;
+#card{
+	border: 1px solid #ddd;
+	background-color: white;
+	padding: 15px;
+	margin: 5px auto;
+	width: 630px;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-td{
-	background-color: whitesmoke;
+#card h3{
+	color: #666;
+}
+#dark01{
+	color: black;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande','Lucida Sans', Arial, sans-serif;
+	margin: 15px 30px;
+}
+#art01{
+	color: black;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	margin: 0 150px;
 }
-th {
-    background-color: #d4d4d4;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande','Lucida Sans', Arial, sans-serif;
+#dark02{
+	color: black;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande','Lucida Sans', Arial, sans-serif;
+	margin: 15px 30px;
+}
+#art02{
+	color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	margin: 0 150px;
+}
+#dark03{
+	color: black;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande','Lucida Sans', Arial, sans-serif;
+	margin: 15px 30px;
+}
+#art03{
+	color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	margin: 0 67px;
+}
+#dark04{
+	color: black;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande','Lucida Sans', Arial, sans-serif;
+	margin: 15px 30px;
+}
+#art04{
+	color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	margin: 0 85px;
+}
+#dark05{
+	color: black;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande','Lucida Sans', Arial, sans-serif;
+	margin: 15px 30px;
+}
+#art05{
+	color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	margin: 0 136px;
+}
+#dark06{
+	color: black;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande','Lucida Sans', Arial, sans-serif;
+	margin: 15px 30px;
+}
+#art06{
+	color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	margin: 0 132px;
+}
+#dark07{
+	color: black;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande','Lucida Sans', Arial, sans-serif;
+	margin: 15px 30px;
+}
+#art07{
+	color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	margin: 0 141px;
 }
 #button01 {
 	border: 1px black;
@@ -45,44 +111,29 @@ th {
 	height: 42px;
 	width: 110px;
 	cursor: pointer;
-	margin: 120px 620px;
+	margin: 20px 620px;
 }
-#button01:hover {
+#button01:hover{
 	background-color: rgb(103, 155, 233);
 	transform: scale(1.05);	
 }
 </style>
 </head>
 <body>
-    <h1><b>All Student Details</b></h1>
-	<table border="2" id="tab">
-		<tr>
-			<th>Name</th>
-			<th>Email</th>
-			<th>Mobile Number</th>
-			<th>Date Of Birth</th>
-			<th>Gender</th>
-			<th>Address</th>
-			<th>Course</th>
-			<th>Total Number of Classes</th>
-			<th>Number of Days Present</th>
-			<th>Number of Days Absent</th>
-		</tr>
-		<c:forEach var="student" items="${details}">
-			<tr>
-				<td>${student.name }</td>
-				<td>${student.email}</td>
-				<td>${student.mobile}</td>
-				<td>${student.dob}</td>
-				<td>${student.gender}</td>
-				<td>${student.address}</td>
-				<td>${student.course}</td>
-				<td>${student.attendence.size()}</td>
-				<td></td>
-				<td></td>
-			</tr>
-		</c:forEach>
-	</table>
+    <h1><b><i>All Student Details</i></b></h1>
+    <c:forEach var="student" items="${details}">   
+    <div id="card00">
+		<div id="card">
+			<h3 id="dark01">Name<span id="art01">: ${student.name}</span></h3>
+			<h3 id="dark02">Email<span id="art02">: ${student.email}</span></h3>
+			<h3 id="dark03">Mobile Number<span id="art03">: ${student.mobile}</span></h3>
+			<h3 id="dark04">Date Of Birth<span id="art04">: ${student.dob}</span></h3>
+			<h3 id="dark05">Gender<span id="art05">: ${student.gender}</span></h3>
+			<h3 id="dark06">Address<span id="art06">: ${student.address}</span></h3>
+			<h3 id="dark07">Course<span id="art07">: ${student.course}</span></h3>
+		</div>
+	</div>
+	</c:forEach>
 	<br><br>
     <a href="/faculty/back"><button id="button01"><b>Back</b></button></a>
 </body>

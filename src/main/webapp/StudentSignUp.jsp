@@ -7,7 +7,7 @@
 <title>Student SignUp Page</title>
 <style type="text/css">
 body {
-	
+	background-color: #f6f6f6;	
 }
 #span{
 	display: flex;
@@ -30,7 +30,7 @@ fieldset{
 	width: 500px;
 	font-size: 18px;
 	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande','Lucida Sans', Arial, sans-serif;
-	margin: 10px auto;
+	margin: 0px auto;
     box-shadow: 0px 5px 15px darkgrey;
 }
 h1{
@@ -38,14 +38,16 @@ h1{
 	margin: 10px;
 	color: darkred;
 	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande','Lucida Sans', Arial, sans-serif;
-	font-size: 32px;
+	font-size: 25px;
 }
 .non{
+	border: none;
+	background: none;
+	outline: none;
 	border-bottom: 1px solid black;
-	border-radius: 8px;
 	height: 35px;
 	width: 250px;
-	margin: 0 5px;
+	margin-bottom: 1rem;
 }
 #but{
 	display: flex;
@@ -102,10 +104,6 @@ a{
     	<span id="span02">${fail}</span>
 	</div>
     <h1><b>Student SignUp</b></h1>
-	<div id="but">
-		<div>
-     	     <img id="image" alt="" src="https://st.depositphotos.com/18722762/51522/v/450/depositphotos_515228796-stock-illustration-online-registration-sign-login-account.jpg" height="400px" width="500px">
-		</div>
 		<div>
 			<fieldset>
 				<form action="/student/signup" method="post" onsubmit="return validatePassword()">
@@ -145,8 +143,18 @@ a{
 					<td><input type="text" class="non" name="address"></td>
 				</tr>
 				<tr>
-					<th>Course :</th>
-					<td><input type="text" class="non" name="course"></td>
+					<th>Courses :</th>
+					<td>
+						<input type="checkbox" class="no" name="course" value="Web Technologies">Web Technologies
+						<input type="checkbox" class="no" name="course" value="Core Java">Core Java
+						<br>
+						<input type="checkbox" class="no" name="course" value="JDBC & Hibernate">JDBC & Hibernate
+						<input type="checkbox" class="no" name="course" value="SpringBoot">SpringBoot
+						<br>
+						<input type="checkbox" class="no" name="course" value="SQL">SQL
+						<input type="checkbox" class="no" name="course" value="React JS">React JS
+						<input type="checkbox" class="no" name="course" value="DevOps">DevOps
+					</td>
 				</tr>
 				</table>
 				<br><br>
@@ -162,7 +170,6 @@ a{
 				</form>
 	    	</fieldset>
 	    </div>
-	</div>
 	<script>
 		function validatePassword() 
 		{

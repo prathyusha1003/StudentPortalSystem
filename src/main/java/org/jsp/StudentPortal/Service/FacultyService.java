@@ -4,6 +4,7 @@ import java.io.UnsupportedEncodingException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import org.jsp.StudentPortal.Dao.FacultyDao;
@@ -11,6 +12,7 @@ import org.jsp.StudentPortal.Dao.StudentDao;
 import org.jsp.StudentPortal.Dto.Attendence;
 import org.jsp.StudentPortal.Dto.Faculty;
 import org.jsp.StudentPortal.Dto.Student;
+import org.jsp.StudentPortal.Helper.AnswerHelper;
 import org.jsp.StudentPortal.Helper.EmailLogic;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -92,8 +94,8 @@ public class FacultyService {
 		}
 	}
 
-	public String fetchStudentDetails(ModelMap map) {
-		List<Student> details = studentDao.fetchAllDetails();
+	public String fetchStudentDetails(ModelMap map, Faculty faculty) {
+		List<Student> details = studentDao.fetchStudentBasedOnSubject(faculty.getSubject());
 		if (details.isEmpty()) {
 			map.put("fail", "No Students");
 			return "FacultyHome";
@@ -116,9 +118,8 @@ public class FacultyService {
 		return "FacultyProfile";
 	}
 
-	public String fetchStudentNames(ModelMap map) {
-		List<Student> details = studentDao.fetchAllDetails();
-
+	public String fetchStudentNames(ModelMap map, Faculty faculty, HttpSession session) {
+		List<Student> details = studentDao.fetchStudentBasedOnSubject(faculty.getSubject());
 		if (details.isEmpty()) {
 			map.put("fail", "No Students");
 			return "FacultyHome";
@@ -127,8 +128,18 @@ public class FacultyService {
 			List<Attendence> attendences = student.getAttendence();
 			boolean flag = false;
 			for (Attendence attendence : attendences) {
+
 				if (attendence.getDate().getDayOfYear() == LocalDate.now().getDayOfYear()) {
-					flag = true;
+					if (attendence.getAbsentSubjects() == null)
+						attendence.setAbsentSubjects(new ArrayList());
+					if (attendence.getPresentSubjects() == null)
+						attendence.setPresentSubjects(new ArrayList());
+					if (attendence.getAbsentSubjects() != null && attendence.getPresentSubjects() != null) {
+						if (attendence.getPresentSubjects().contains(faculty.getSubject())
+								|| attendence.getAbsentSubjects().contains(faculty.getSubject())) {
+							flag = true;
+						}
+					}
 				}
 			}
 			if (!flag) {
@@ -141,23 +152,64 @@ public class FacultyService {
 		}
 	}
 
-	public String addAttendence(int id, String attend, ModelMap map) {
-		Student student = studentDao.findById(id);
+	public String addAttendence(AnswerHelper helper, ModelMap map, Faculty faculty, HttpSession session) {
+		Map<Integer, String> data = helper.getAttend();
+		for (int id : data.keySet()) {
+			Student student = studentDao.findById(id);
+			String attendence = helper.getAttend().get(id);
 
-		Attendence attendence = new Attendence();
-		attendence.setAttendence(attend);
-		attendence.setDate(LocalDate.now());
+			List<Attendence> attendences = student.getAttendence();
 
-		List<Attendence> list = student.getAttendence();
-		if (list == null)
-			list = new ArrayList<Attendence>();
+			if (attendences == null)
+				attendences = new ArrayList<Attendence>();
 
-		list.add(attendence);
-		student.setAttendence(list);
+			Attendence attendence3 = null;
 
-		studentDao.save(student);
+			for (Attendence attendence2 : attendences) {
 
-		map.put("pass", "Attendence Taken Success");
+				if (attendence2.getDate().getDayOfYear() == LocalDate.now().getDayOfYear())
+					attendence3 = attendence2;
+			}
+
+			if (attendence.equals("present")) {
+				if (attendence3 != null) {
+					if (attendence3.getPresentSubjects() == null)
+						attendence3.setPresentSubjects(new ArrayList<String>());
+					attendence3.getPresentSubjects().add(faculty.getSubject());
+				} else {
+					attendence3 = new Attendence();
+					attendence3.setDate(LocalDate.now());
+					List<String> list = attendence3.getPresentSubjects();
+					if (list == null)
+						list = new ArrayList<String>();
+					list.add(faculty.getSubject());
+					attendence3.setPresentSubjects(list);
+					attendences.add(attendence3);
+				}
+				student.setAttendence(attendences);
+				studentDao.save(student);
+				session.setAttribute("faculty", faculty);
+			} else {
+				if (attendence3 != null) {
+					if (attendence3.getAbsentSubjects() == null)
+						attendence3.setAbsentSubjects(new ArrayList<String>());
+					attendence3.getAbsentSubjects().add(faculty.getSubject());
+				} else {
+					attendence3 = new Attendence();
+					attendence3.setDate(LocalDate.now());
+					List<String> list = attendence3.getAbsentSubjects();
+					if (list == null)
+						list = new ArrayList<String>();
+					list.add(faculty.getSubject());
+					attendence3.setAbsentSubjects(list);
+					attendences.add(attendence3);
+				}
+				student.setAttendence(attendences);
+				studentDao.save(student);
+				session.setAttribute("faculty", faculty);
+			}
+		}
+		map.put("pass", "Attendence Added for today!!");
 		return "FacultyHome";
 	}
 }

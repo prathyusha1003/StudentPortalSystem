@@ -7,6 +7,9 @@
 <meta charset="ISO-8859-1">
 <title>Faculty Profile</title>
 <style type="text/css">
+body{
+	background-color: whitesmoke;
+}
 #span{
 	display: flex;
 	justify-content: center;
@@ -29,13 +32,16 @@ h1{
 	background-color: #133c55;
 	height: 50px;
 	padding: 2px;
+	border-radius: 8px;
 }
 .card {
 	border: 1px solid #ddd;
+	background-color: white;
 	padding: 15px;
 	margin: 10px auto;
 	width: 900px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
 }
 .card h3 {
 	color: #666;

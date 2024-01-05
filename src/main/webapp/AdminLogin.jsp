@@ -53,6 +53,7 @@ h1 {
 }
 #image{
     margin: 0 20px;
+    border-radius: 100%;
 }
 #button01 {
 	border: 1px black;
@@ -83,7 +84,7 @@ h1 {
 	 <h1><b>Admin Login</b></h1>
      <div id="but">
      	<div>
-     		<img id="image" alt="" src="https://p.kindpng.com/picc/s/174-1747543_call-center-gif-animado-hd-png-download.png" height="400px" width="450px">
+     		<img id="image" alt="" src="https://www.wpeka.com/rgh/wp-content/uploads/2014/03/Changing-the-default-admin-user-in-WordPress1-460x575.jpg" height="350px" width="380px">
      	</div>
      	<div>
      	<fieldset>

@@ -133,6 +133,7 @@ a{
 			</table>
 			<br><br>
 			<div id="button">
+			    <a href="/faculty/back01"><button type="button" id="button01"><b>Back</b></button></a>
 				<button id="button01"><b>Update</b></button>
 				<button type="reset" id="button01"><b>Cancel</b></button>
 			</div>

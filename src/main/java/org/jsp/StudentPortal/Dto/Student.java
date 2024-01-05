@@ -14,21 +14,20 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Student 
-{
+public class Student {
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
 	String name;
 	String email;
 	long mobile;
-    LocalDate dob;
+	LocalDate dob;
 	String password;
 	String gender;
 	String address;
 	String course;
 	int otp;
-	
-	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	List<Attendence> attendence;
 }

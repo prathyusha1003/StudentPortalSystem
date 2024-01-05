@@ -9,6 +9,20 @@ body {
     margin: 0;
 	padding: 0;
 }
+#span{
+	display: flex;
+	justify-content: center;
+}
+#span01{
+    color: green;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
+}
+#span02{
+    color: red;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
+}
 .navbar {
 	background-color: #333;
 	color: #228B22;
@@ -52,8 +66,20 @@ p {
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	cursor: pointer;
 }
-#btn:hover {
-	border-bottom: 2px solid white;
+#btn::after{
+    content: '';
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: left;
+}
+#btn:hover::after{
+    color: rgb(227, 98, 152);
+    transform: scaleX(1);
+    transition: 0.4s ease-in-out;
 }
 #pic{
 	display: flex;
@@ -75,6 +101,10 @@ h3{
 </style>
 </head>
 <body>
+	<div id="span">
+		<span id="span01">${pass}</span>
+    	<span id="span02">${fail}</span>
+	</div>
 	<div class="navbar">
     	<div id="pic">
     	    <img alt="" src="https://i.pinimg.com/474x/15/3a/d9/153ad9ab7acca6191d316d73aaff57cc.jpg" height="65px" width="100px">
@@ -82,7 +112,6 @@ h3{
     	<div>
         	<a href="/portal-members-signup" style="float: right;"><b id="btn">Sign Up</b></a>
         	<a href="/portal-members-login" style="float: right;"><b id="btn">Sign In</b></a>
-    	    <a href="" style="float: right;"><b id="btn">Contact Us</b></a>
     	</div>
 	</div>
 
@@ -93,5 +122,10 @@ h3{
 	<footer>
 		<h3>© 2023 - University Grants Commission.All Rights Reserved.</h3>
 	</footer>
+	<script type="text/javascript">
+    	setTimeout(function(){
+    		document.getElementById("span").style.display = "none"
+    	}, 1000);
+    </script>
 </body>
 </html>

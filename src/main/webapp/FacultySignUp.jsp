@@ -7,7 +7,7 @@
 <title>Faculty SignUp Page</title>
 <style type="text/css">
 body {
-	
+	background-color: #f6f6f6;
 }
 #span{
 	display: flex;
@@ -38,14 +38,16 @@ h1{
 	margin: 10px;
 	color: darkred;
 	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande','Lucida Sans', Arial, sans-serif;
-	font-size: 30px;
+	font-size: 25px;
 }
 .non{
+	border: none;
+	background: none;
+	outline: none;
 	border-bottom: 1px solid black;
-	border-radius: 8px;
 	height: 35px;
 	width: 250px;
-	margin: 0 5px;
+	margin-bottom: 1rem;
 }
 #button{
 	display: flex;
@@ -92,7 +94,7 @@ a{
 		<span id="span01">${pass}</span>
     	<span id="span02">${fail}</span>
 	</div>
-    <h1><b><i>Faculty SignUp</i></b></h1>
+    <h1><b>Faculty SignUp</b></h1>
 	<div>
 	<fieldset>
 		<form action="/faculty/signup" method="post" onsubmit="return validatePassword()">

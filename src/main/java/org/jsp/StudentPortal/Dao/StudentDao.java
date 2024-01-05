@@ -37,4 +37,9 @@ public class StudentDao
 	{
 		return studentRepository.findAll();
 	}
+	
+	public List<Student> fetchStudentBasedOnSubject(String subject)
+	{
+		return studentRepository.findByCourseLike("%"+subject+"%");
+	}
 }

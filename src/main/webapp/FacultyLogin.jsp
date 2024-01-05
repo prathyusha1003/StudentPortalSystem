@@ -54,6 +54,7 @@ h1 {
 }
 #image{
     margin: 0 20px;
+    border-radius: 100%;
 }
 a{
 	text-decoration: none;
@@ -100,7 +101,7 @@ a{
      <h1><b>Faculty Login</b></h1>
      <div id="but">
      	<div>
-     		<img id="image" alt="" src="https://citizen.goapolice.gov.in/home1-theme/images/Staff.png" height="400px" width="450px">
+     		<img id="image" alt="" src="https://img.freepik.com/premium-vector/business-characters-team-work-office-people-corporate-employee-cartoon-teamwork-communication-business-team-illustration_176516-369.jpg" height="400px" width="450px">
      	</div>
      	<div>
      	<fieldset>

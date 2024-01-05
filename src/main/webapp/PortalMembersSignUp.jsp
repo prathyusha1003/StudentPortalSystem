@@ -12,59 +12,56 @@ body {
 #but{
     display: flex;
     justify-content: center;
+    gap: 40px;
 }
 img{
-    margin: 80px 40px;
-    border-radius: 100%;
-}
-#buttoon{
-    margin: 0 -100px;
+	margin: 55px auto;
 }
 #button01{
     border: 2px white;
     color: whitesmoke;
     font-size: 25px;
-    background-color: #e8c36b;
+    background-color: #581845;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border-radius: 10px;
     height: 60px;
     width: 320px;
     cursor: pointer;
-    margin: 160px 0px;
+    margin: 16rem auto;
 }
 #button01:hover{
-	border: 1px solid #2783ce;
-	background-color: #2783ce;
+	border: 1px solid #dc7fc1;
+	background-color: #dc7fc1;
 	transform: scale(1.05);	
+	color: black;
 }
 #button02{
     border: 2px white;
     color: whitesmoke;
     font-size: 25px;
-    background-color: #e8c36b;
+    background-color: #581845;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border-radius: 10px;
     height: 60px;
     width: 200px;
     cursor: pointer;
-    margin: -200px 60px;
+    margin: 16rem auto;
 }
 #button02:hover{
-	border: 1px solid #2783ce;
-	background-color: #2783ce;
+	border: 1px solid #dc7fc1;
+	background-color: #dc7fc1;
 	transform: scale(1.05);	
+	color: black;
 }
 </style>
 </head>
 <body>
 	<div id="but">
+		<a href="/faculty/signup"><button id="button01"><b><i>Faculty Members</i></b></button></a>
 		<div>
-			<img alt="" src="https://cdni.iconscout.com/illustration/premium/thumb/concept-of-personal-data-and-business-online-data-security-1916378-1625553.png" height="450px" width="500px">
+			<img alt="" src="https://www.paidmembershipspro.com/wp-content/uploads/2016/06/signup.png" height="450px" width="500px">
 		</div>
-		<div id="button">
-			<a href="/faculty/signup"><button id="button01"><b><i>Faculty Members</i></b></button></a><br>
-			<a href="/student/signup"><button id="button02"><b><i>Students</i></b></button></a>
-		</div>
+		<a href="/student/signup"><button id="button02"><b><i>Students</i></b></button></a>
 	</div>
 </body>
 </html>

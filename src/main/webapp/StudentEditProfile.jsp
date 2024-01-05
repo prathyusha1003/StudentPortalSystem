@@ -36,7 +36,7 @@ fieldset{
 h1{
 	text-align: center;
 	margin: 10px;
-	color: darkred;
+	color: brown;
 	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande','Lucida Sans', Arial, sans-serif;
 	font-size: 30px;
 }
@@ -133,6 +133,7 @@ a{
 			</table>
 			<br><br>
 			<div id="button">
+				<a href="/student/back"><button type="button" id="button01"><b>Back</b></button></a>
 				<button id="button01"><b>Update</b></button>
 				<button type="reset" id="button01"><b>Cancel</b></button>
 			</div>
